@@ -1,7 +1,7 @@
 # Developing a Simple Webserver
 ## AIM:
 
-To develop a simple webserver to serve html pages.
+To develop a webserver to display the top five programming language.
 ## DESIGN STEPS:
 ### Step 1:
 
@@ -19,17 +19,21 @@ Serving the HTML pages.
 
 Testing the webserver
 ## PROGRAM:
+~~~
 from http.server import HTTPServer, BaseHTTPRequestHandler
-content="""
+content = """
 <!DOCTYPE html>
-<html>
+<html
 <head>
-<title>My webserver</title>
+<title>Mywebsite</title>
 </head>
 <body>
-<h1>Name :pavan.m</h1>
-<h2>21003453</h2>
-<h3>Dept.:Artificial Intelligence and Data Science</h3>
+<h1>Top five programming language :</h1>
+<h2>Javascript</h2>
+<h2>Java</h2>
+<h2>Ruby</h2>
+<h2>Python</h2>
+<h2>C++</h2>
 </body>
 </html>
 """
@@ -42,9 +46,14 @@ class myhandler(BaseHTTPRequestHandler):
         self.wfile.write(content.encode())
 server_address = ('',8080)
 httpd = HTTPServer(server_address,myhandler)
-print("my webserver is running...")
+print("my server is running...")
 httpd.serve_forever()
-## OUTPUT:
-![output](./Pavan webserver)
-## RESULT:
-Program finished successfully.  
+~~~
+
+# OUTPUT
+### Server Side Output
+![Server Side Output](Server_side_output.png)
+### Clint Side Output
+![Clint Side Output](Clint_side_output.png)
+## Result:
+Program finished successfully.
